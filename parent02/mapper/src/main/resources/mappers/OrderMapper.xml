@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+   mapper标签:配置各类声明
+   namespace：名称空间，由于映射文件可能有多个，为了防止crud语句的唯一标识被重复，需要设置空间名称。
+ -->
+
+<mapper namespace="com.health.mapper.OrderMapper">
+
+    <!--条件查询用户是否已经预约-->
+    <select id="findByCondition" resultType="Order">
+        select * from t_order where orderDate = #{orderDate} and member_id = #{memberId} and setmeal_id = #{setmealId}
+    </select>
+
+    <!--添加预约-->
+    <insert id="add" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into t_order values(null,#{memberId},#{orderDate},#{orderType},#{orderStatus},#{setmealId})
+    </insert>
+
+    <select id="findById" resultType="Map">
+        SELECT
+            m.name member,s.name setmeal,o.orderDate,o.orderType
+            FROM
+                t_order o
+            INNER JOIN t_member m ON o.member_id = m.id
+            INNER JOIN t_setmeal s on o.setmeal_id = s.id
+            WHERE
+                o.id = #{id}
+    </select>
+
+    <!--今日预约数-->
+    <select id="findTodayOrderNumber" resultType="Integer">
+        select count(id) from t_order where orderDate = #{today}
+    </select>
+
+    <!--今日已到诊-->
+    <select id="findTodayVisitsNumber" resultType="Integer">
+        select count(id) from t_order where orderStatus = '已到诊'
+    </select>
+
+    <!--本周和本月预约数-->
+    <select id="findOrderNumberAfterDate" resultType="Integer">
+        select count(id) from t_order where orderDate >= #{date}
+    </select>
+
+    <!--本周和本月到诊数-->
+    <select id="findVisitsNumberAfterDate" resultType="Integer">
+        select count(id) from t_order where orderDate >= #{date} and orderStatus = '已到诊'
+    </select>
+
+    <!--热门套餐-->
+    <select id="findHotSetmeal" resultType="Map">
+        SELECT
+            count(s.id) setmeal_count,
+            s.name,
+            count(s.id)/(select count(*) from t_order) proportion
+        FROM
+            t_order o
+        INNER JOIN t_setmeal s ON o.setmeal_id = s.id
+        GROUP BY
+            s.id
+        ORDER BY
+        setmeal_count
+            DESC
+        LIMIT 0,4
+    </select>
+</mapper>

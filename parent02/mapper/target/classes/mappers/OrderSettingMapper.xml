@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+   mapper标签:配置各类声明
+   namespace：名称空间，由于映射文件可能有多个，为了防止crud语句的唯一标识被重复，需要设置空间名称。
+ -->
+
+<mapper namespace="com.health.mapper.OrderSettingMapper">
+    <!--统计预约日期-->
+    <select id="findCountByOrderDate" resultType="java.lang.Integer">
+        select count(id) from t_ordersetting where orderDate = #{orderDate}
+    </select>
+    <!--更新当前预约日期的数量-->
+    <update id="updateNumberByOrderDate">
+        update t_ordersetting set number = #{number} where orderDate = #{orderDate}
+    </update>
+    <!--新增预约设置-->
+    <insert id="add">
+        insert into t_ordersetting values(null,#{orderDate},#{number},#{reservations})
+    </insert>
+
+    <select id="findOrderSettingByMonth" resultType="OrderSetting">
+        select * from t_ordersetting where orderDate between #{dateBegin} and #{dateEnd}
+    </select>
+
+    <!--查询当前日期是否可以预约-->
+    <select id="findByOrderDate" resultType="OrderSetting">
+        select * from t_ordersetting where orderDate = #{date}
+    </select>
+
+    <!--更新预约后台数据-->
+    <update id="updateReservationsByOrderDate">
+        update t_ordersetting set reservations = reservations +1 where orderDate = #{date}
+    </update>
+    <!--清除之前的预约设置数据-->
+    <delete id="deleteOrderSettingByToday">
+        delete from t_ordersetting where orderDate &lt; #{date}
+    </delete>
+</mapper>

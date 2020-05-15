@@ -1,0 +1,11 @@
+com\health\mapper\MemberMapper.class
+com\health\mapper\PermissionMapper.class
+com\health\mapper\UserMapper.class
+com\health\mapper\SetmealMapper.class
+com\health\mapper\OrderMapper.class
+com\health\mapper\ReportMapper.class
+com\health\mapper\CheckItemMapper.class
+com\health\mapper\MenuMapper.class
+com\health\mapper\CheckGroupMapper.class
+com\health\mapper\OrderSettingMapper.class
+com\health\mapper\RoleMapper.class

@@ -1,0 +1,5 @@
+com\health\controller\SetmealMobileController.class
+com\health\controller\OrderMobileController.class
+com\health\controller\ValidateCodeController.class
+com\health\controller\ImageVerifyController.class
+com\health\controller\MobileLoginController.class

@@ -1,0 +1,11 @@
+com\health\service\impl\OrderServiceImpl.class
+com\health\service\impl\MemberServiceImpl.class
+com\health\service\impl\PermissionServiceImpl.class
+com\health\service\impl\MenuServiceImpl.class
+com\health\service\impl\ReportServiceImpl.class
+com\health\service\impl\UserServiceImpl.class
+com\health\service\impl\OrderSettingServiceImpl.class
+com\health\service\impl\RoleServiceImpl.class
+com\health\service\impl\CheckItemServiceImpl.class
+com\health\service\impl\CheckGroupServiceImpl.class
+com\health\service\impl\SetmealServiceImpl.class

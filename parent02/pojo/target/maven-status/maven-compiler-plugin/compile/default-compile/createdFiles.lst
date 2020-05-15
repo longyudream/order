@@ -1,0 +1,14 @@
+com\health\pojo\Menu.class
+com\health\entity\PageResult.class
+com\health\pojo\TestVo.class
+com\health\pojo\OrderSetting.class
+com\health\entity\QueryPageBean.class
+com\health\pojo\CheckGroup.class
+com\health\pojo\User.class
+com\health\entity\Result.class
+com\health\pojo\Permission.class
+com\health\pojo\Order.class
+com\health\pojo\Member.class
+com\health\pojo\Setmeal.class
+com\health\pojo\CheckItem.class
+com\health\pojo\Role.class

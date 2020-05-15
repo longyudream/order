@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:17 +0800] "GET /pages/login.html HTTP/1.1" 200 4803 http-bio-8083-exec-1 201
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:17 +0800] "GET /plugins/elementui/index.css HTTP/1.1" 200 198714 http-bio-8083-exec-2 335
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:17 +0800] "GET /css/page-health-login.css HTTP/1.1" 200 9718 http-bio-8083-exec-3 341
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:17 +0800] "GET /plugins/healthmobile.js HTTP/1.1" 200 2426 http-bio-8083-exec-5 364
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:18 +0800] "GET /plugins/vue/vue.js HTTP/1.1" 200 300248 http-bio-8083-exec-6 478
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:18 +0800] "GET /plugins/vue/axios-0.18.0.js HTTP/1.1" 200 12948 http-bio-8083-exec-7 495
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:18 +0800] "GET /plugins/jquery/dist/jquery.min.js HTTP/1.1" 200 86659 http-bio-8083-exec-4 588
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:18 +0800] "GET /plugins/elementui/index.js HTTP/1.1" 200 494238 http-bio-8083-exec-8 459
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:19 +0800] "GET /fonts/health-icon.ttf?l7yt0w HTTP/1.1" 200 14764 http-bio-8083-exec-8 87
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:19 +0800] "GET /img/asset-favico.ico HTTP/1.1" 200 4286 http-bio-8083-exec-8 113
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:54 +0800] "POST /validateCode/send2telephone.do?telephone=17596975820 HTTP/1.1" 200 60 http-bio-8083-exec-4 4201
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:27:54 +0800] "GET /plugins/elementui/fonts/element-icons.woff HTTP/1.1" 200 6164 http-bio-8083-exec-4 41
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:28:52 +0800] "GET /pages/login.html HTTP/1.1" 304 - http-bio-8083-exec-8 64
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:28:53 +0800] "GET /img/asset-favico.ico HTTP/1.1" 200 4286 http-bio-8083-exec-8 3
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:29:17 +0800] "POST /validateCode/send2telephone.do?telephone=17596975820 HTTP/1.1" 200 60 http-bio-8083-exec-2 48115
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:29:17 +0800] "POST /validateCode/send2telephone.do?telephone=17596975820 HTTP/1.1" 200 60 http-bio-8083-exec-8 22286
+0:0:0:0:0:0:0:1 - - [13/May/2020:23:29:42 +0800] "POST /validateCode/send2telephone.do?telephone=17596975820 HTTP/1.1" 200 60 http-bio-8083-exec-10 11751

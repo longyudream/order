@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+   mapper标签:配置各类声明
+   namespace：名称空间，由于映射文件可能有多个，为了防止crud语句的唯一标识被重复，需要设置空间名称。
+ -->
+
+<mapper namespace="com.health.mapper.MenuMapper">
+
+    <select id="findAll" resultType="Menu">
+        select * from t_menu
+    </select>
+
+    <resultMap id="userAndRoleAndMenu" type="Menu" autoMapping="true">
+        <id property="id" column="id"></id>
+
+        <collection property="children" ofType="Menu" javaType="List" autoMapping="true">
+            <result property="path" column="cpath"></result>
+            <result property="name" column="cname"></result>
+            <result property="linkUrl" column="clinkUrl"></result>
+        </collection>
+
+    </resultMap>
+
+
+    <select id="getMenus"  resultMap="userAndRoleAndMenu">
+         select m.*,m2.path as cpath,m2.name as cname,m2.linkUrl clinkUrl from t_user u,t_role r,t_menu m ,t_user_role ur,t_role_menu rm ,t_menu m2
+          where u.id=ur.user_id
+          and ur.role_id=r.id
+         and r.id=rm.role_id
+         and rm.menu_id=m.id
+         and m.id=m2.parentMenuId and m.level =1 and u.username= #{username}
+
+    </select>
+</mapper>

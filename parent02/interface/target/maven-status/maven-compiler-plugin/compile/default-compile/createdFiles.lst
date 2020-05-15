@@ -1,0 +1,11 @@
+com\health\service\OrderSettingService.class
+com\health\service\RoleService.class
+com\health\service\OrderService.class
+com\health\service\MemberService.class
+com\health\service\SetmealService.class
+com\health\service\MenuService.class
+com\health\service\ReportService.class
+com\health\service\PermissionService.class
+com\health\service\CheckGroupService.class
+com\health\service\UserService.class
+com\health\service\CheckItemService.class

@@ -1,0 +1,10 @@
+com\health\controller\PermissionController.class
+com\health\controller\CheckItemController.class
+com\health\controller\SetmealController.class
+com\health\controller\CheckGroupController.class
+com\health\security\SpringSecurityUserService.class
+com\health\controller\MenuController.class
+com\health\controller\RoleController.class
+com\health\controller\OrderSettingController.class
+com\health\controller\ReportController.class
+com\health\controller\UserController.class

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+   mapper标签:配置各类声明
+   namespace：名称空间，由于映射文件可能有多个，为了防止crud语句的唯一标识被重复，需要设置空间名称。
+ -->
+
+<mapper namespace="com.health.mapper.MemberMapper">
+
+    <!--根据手机号查询会员是否存在-->
+    <select id="findByTelephone" resultType="Member">
+        select  * from t_member where phoneNumber = #{telephone}
+    </select>
+
+    <insert id="add" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into t_member values (null,#{fileNumber},#{name},#{sex},#{idCard},#{phoneNumber},#{regTime},#{password},#{email},#{birthday},#{remark})
+    </insert>
+
+    <!--统计每个月的会员数量-->
+    <select id="findMemberCountByMonth" resultType="Integer">
+        select count(*) from t_member where regTime BETWEEN  #{monthBegin} and #{monthEnd}
+    </select>
+
+    <!--今日新增会员数-->
+    <select id="findTodayNewMember" resultType="Integer">
+        select count(id) from t_member where regTime = #{today}
+    </select>
+    <!--获取总会员数数-->
+    <select id="findTotalMember" resultType="Integer">
+        select count(*) from t_member
+    </select>
+
+    <!--本周和本月新增会员数-->
+    <select id="findNewMemberCountAfterDate" resultType="Integer">
+        select count(*) from t_member where regTime >= #{date}
+    </select>
+
+
+
+    <!--男女会员的占比-->
+    <select id="getMemberSexReport" resultType="Map">
+        select count(m.sex) as value,m.sex as name FROM t_member m  GROUP BY m.sex
+    </select>
+
+
+    <select id="getMemberYearsReport" resultType="Map">
+
+        select DATE_FORMAT(m.regTime,'%Y-%m') as name,count(*) as value from t_member m GROUP BY (SELECT DATE_FORMAT(m.regTime,'%Y-%m'))
+
+    </select>
+
+</mapper>
